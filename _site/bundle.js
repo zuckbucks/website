@@ -1,12 +1,7 @@
 (function(){function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s}return e})()({1:[function(require,module,exports){
 var abi = require('../')
-var contractAddress = '0xfac9F8f5F995C768a1d2d8a63a255a066307bA10' // Pluton mainnet address
 
 
-var ownerAddress = '0x18C59adBF99BE137B3EEAFFd84b083FD623A4c36'
-var toAddress = '0xfdbfbdbe2ea6131f886c0cde629a64d7eff4d380'
-var transaction
-var is_rit_field
 var token
 var addr
 
@@ -60,15 +55,6 @@ function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-
-
-function getBalance(addr) {
-  console.log('getting balance for ' + addr)
-  token.balanceOf.call(addr, function (err, bal) {
-    if (err) { console.error(err) }
-    console.log('token balance for account ' + addr + ' is ' + bal.toString(10))
-  })
-}
 
 },{"../":2}],2:[function(require,module,exports){
 module.exports = [
